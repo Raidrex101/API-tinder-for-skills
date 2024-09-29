@@ -1,0 +1,12 @@
+{
+  "name": "tinder-para-habilidades-personales",
+  "version": "1.0.0",
+  "description": "Proyecto para el moudlo de backend en DEV-f ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Hector Castro",
+  "license": "ISC"
+}
