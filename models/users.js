@@ -41,10 +41,25 @@ const updateUser = (userId, bodyUser) => {
 }
 
 // DELETE
+const softDeleteUser = (userId) => {
+  return knex
+    .update({ is_active: false })
+    .from('users')
+    .where('user_id', userId)
+}
+
+const deleteUser = (userId) => {
+  return knex
+    .delete()
+    .from('users')
+    .where('user_id', userId)
+}
 
 module.exports = {
   createUser,
   getAll,
   findOne,
-  updateUser
+  updateUser,
+  softDeleteUser,
+  deleteUser
 }

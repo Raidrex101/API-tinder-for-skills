@@ -36,10 +36,27 @@ const updateOneUser = (req, res) => {
 }
 
 // DELETE
+const hideOneUser = (req, res) => {
+  modelUsers.softDeleteUser(req.params.userId).then(() => {
+    res.status(204).json()
+  }).catch((err) => {
+    res.status(400).json(err.message)
+  })
+}
+
+const deleteOneUser = (req, res) => {
+  modelUsers.deleteUser(req.params.userId).then(() => {
+    res.status(204).json()
+  }).catch((err) => {
+    res.status(400).json(err.message)
+  })
+}
 
 module.exports = {
   createUser,
   getAllUsers,
   getOneUser,
-  updateOneUser
+  updateOneUser,
+  hideOneUser,
+  deleteOneUser
 }
