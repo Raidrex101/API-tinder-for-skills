@@ -1,5 +1,5 @@
 const express = require('express') // importar express
-const path = require('path')
+const path = require('path') // importar path para manejar archivos estaticos
 
 // importar las rutas de mis vistas
 const usersRoutes = require('./routes/userRoutes')
@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 3000
 app.use(express.json()) // para que express entienda json
 // rutas definidas para la aplicacion
 app.use('/api/v1', usersRoutes)
+
+app.use(express.static(path.join(__dirname, 'public'))) // para que express entienda archivos estaticos como css
 
 app.get('/', (req, res) => { // las rutas de mi servidor
   res.sendFile(path.join(__dirname, 'public', 'index.html'))
