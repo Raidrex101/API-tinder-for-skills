@@ -17,8 +17,18 @@ const createUser = (bodyUser) => {
 }
 
 // READ
-const getAllUsers = () => {
-  return knex.select('*').from('users')
+const getAll = () => {
+  return knex
+    .select('*')
+    .from('users')
+    .where('is_active', true)
+}
+
+const findOne = (userId) => {
+  return knex
+    .select('*')
+    .from('users')
+    .where('user_id', userId)
 }
 
 // UPDATE
@@ -26,5 +36,7 @@ const getAllUsers = () => {
 // DELETE
 
 module.exports = {
-  createUser
+  createUser,
+  getAll,
+  findOne
 }
