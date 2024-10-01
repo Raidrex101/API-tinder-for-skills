@@ -3,17 +3,13 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.hasTable('users').then(function (exists) { // knex migrate:latest para ejecutar las migraciones
-    if (!exists) {
-      return knex.schema.createTable('users', function (table) {
-        table.increments('user_id').primary()
-        table.string('first_name').notNullable()
-        table.string('last_name').notNullable()
-        table.string('email').notNullable()
-        table.string('phone').notNullable()
-        table.string('is_active').notNullable().defaultTo('true')
-      })
-    }
+  return knex.schema.createTable('users', function (table) {
+    table.increments('user_id').primary()
+    table.string('first_name').notNullable()
+    table.string('last_name').notNullable()
+    table.string('email').notNullable()
+    table.string('phone').notNullable()
+    table.boolean('is_active').notNullable().defaultTo('true')
   })
 }
 
