@@ -27,11 +27,19 @@ const getOneUser = (req, res) => {
 }
 
 // UPDATE
+const updateOneUser = (req, res) => {
+  modelUsers.updateUser(req.params.userId, req.body).then((user) => {
+    res.status(200).json(user)
+  }).catch((err) => {
+    res.status(400).json(err.message)
+  })
+}
 
 // DELETE
 
 module.exports = {
   createUser,
   getAllUsers,
-  getOneUser
+  getOneUser,
+  updateOneUser
 }

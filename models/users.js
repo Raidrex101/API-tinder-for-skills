@@ -32,11 +32,19 @@ const findOne = (userId) => {
 }
 
 // UPDATE
+const updateUser = (userId, bodyUser) => {
+  return knex
+    .update(bodyUser)
+    .from('users')
+    .where('user_id', userId)
+    .returning('*')
+}
 
 // DELETE
 
 module.exports = {
   createUser,
   getAll,
-  findOne
+  findOne,
+  updateUser
 }
