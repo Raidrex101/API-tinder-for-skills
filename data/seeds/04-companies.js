@@ -4,10 +4,6 @@
  */
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
-  await knex.raw('TRUNCATE ratings RESTART IDENTITY CASCADE')
-  await knex.raw('TRUNCATE contracts RESTART IDENTITY CASCADE')
-  await knex.raw('TRUNCATE projects RESTART IDENTITY CASCADE')
-  await knex.raw('TRUNCATE companies RESTART IDENTITY CASCADE')
 
   await knex('companies').insert([
     {

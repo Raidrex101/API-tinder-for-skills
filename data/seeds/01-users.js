@@ -4,6 +4,11 @@
  */
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
+  await knex.raw('TRUNCATE ratings RESTART IDENTITY CASCADE')
+  await knex.raw('TRUNCATE contracts RESTART IDENTITY CASCADE')
+  await knex.raw('TRUNCATE projects RESTART IDENTITY CASCADE')
+  await knex.raw('TRUNCATE companies RESTART IDENTITY CASCADE')
+  await knex.raw('TRUNCATE person_skills RESTART IDENTITY CASCADE')
   await knex.raw('TRUNCATE skills RESTART IDENTITY CASCADE')
   await knex.raw('TRUNCATE users RESTART IDENTITY CASCADE')
   // se borran las tablas en un orden especifico para que no se rompa la base de datos en las llaves foraneas
