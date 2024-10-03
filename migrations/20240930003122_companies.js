@@ -7,6 +7,7 @@ exports.up = function (knex) {
     table.increments('company_id').primary()
     table.string('name').notNullable()
     table.string('description').notNullable()
+    table.boolean('is_active').notNullable().defaultTo('true')
   })
 }
 

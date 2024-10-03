@@ -5,6 +5,7 @@ const path = require('path') // importar path para manejar archivos estaticos
 const usersRoutes = require('./routes/userRoutes')
 const skillsRoutes = require('./routes/skillsRoutes')
 const personSkillsRoutes = require('./routes/personSkillsRoutes')
+const companiesRoutes = require('./routes/companyRoutes')
 
 const app = express() // inicializar express
 
@@ -15,6 +16,7 @@ app.use(express.json()) // para que express entienda json
 app.use('/api/v1', usersRoutes)
 app.use('/api/v1', skillsRoutes)
 app.use('/api/v1', personSkillsRoutes)
+app.use('/api/v1', companiesRoutes)
 
 app.use(express.static(path.join(__dirname, 'public'))) // para que express entienda archivos estaticos como css
 
