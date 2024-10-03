@@ -1,7 +1,7 @@
 const modelCompanies = require('../models/companies')
 
 // CREATE
-const createCompany = async (req, res) => {
+const createCompany = (req, res) => {
   modelCompanies.addCompany(req.body)
     .then((company) => {
       res.status(201).json(company)

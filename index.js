@@ -6,6 +6,7 @@ const usersRoutes = require('./routes/userRoutes')
 const skillsRoutes = require('./routes/skillsRoutes')
 const personSkillsRoutes = require('./routes/personSkillsRoutes')
 const companiesRoutes = require('./routes/companyRoutes')
+const projectRoutes = require('./routes/projectRoutes')
 
 const app = express() // inicializar express
 
@@ -17,6 +18,7 @@ app.use('/api/v1', usersRoutes)
 app.use('/api/v1', skillsRoutes)
 app.use('/api/v1', personSkillsRoutes)
 app.use('/api/v1', companiesRoutes)
+app.use('/api/v1', projectRoutes)
 
 app.use(express.static(path.join(__dirname, 'public'))) // para que express entienda archivos estaticos como css
 
