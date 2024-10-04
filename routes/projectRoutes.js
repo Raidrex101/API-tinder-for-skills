@@ -7,6 +7,7 @@ router.post('/projects', projectController.createProject)
 router.get('/projects', projectController.getAllProjects)
 router.get('/projects/:projectId', projectController.getOneProject)
 router.patch('/projects/:projectId', projectController.updateOneProject)
+router.patch('/projects/restore/:projectId', projectController.restoreProject)
 router.delete('/projects/:projectId', projectController.hideOneProject)
 router.delete('/projects/delete/:projectId', projectController.deleteOneProject)
 

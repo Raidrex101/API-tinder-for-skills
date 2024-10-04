@@ -40,6 +40,13 @@ const updateUser = (userId, bodyUser) => {
     .returning('*')
 }
 
+const restoreUser = (userId) => {
+  return knex
+    .update({ is_active: true })
+    .from('users')
+    .where('user_id', userId)
+}
+
 // DELETE
 const softDeleteUser = (userId) => {
   return knex
@@ -61,5 +68,6 @@ module.exports = {
   findOne,
   updateUser,
   softDeleteUser,
-  deleteUser
+  deleteUser,
+  restoreUser
 }

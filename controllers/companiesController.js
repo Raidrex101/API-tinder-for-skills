@@ -39,6 +39,16 @@ const updateOneCompany = (req, res) => {
     })
 }
 
+const restoreCompany = (req, res) => {
+  modelCompanies.restoreCompany(req.params.companyId)
+    .then(() => {
+      res.status(200).json({ message: 'Company successfully restored' })
+    })
+    .catch((err) => {
+      res.status(400).json({ error: err.message })
+    })
+}
+
 // DELETE
 
 const hideACompany = (req, res) => {
@@ -65,5 +75,6 @@ module.exports = {
   getOneCompany,
   updateOneCompany,
   hideACompany,
-  deleteOneCompany
+  deleteOneCompany,
+  restoreCompany
 }

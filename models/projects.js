@@ -32,6 +32,14 @@ const updateProject = (projectId, bodyProject) => {
     .returning('*')
 }
 
+const restoreProject = (projectId) => {
+  return knex
+    .update({ status: 'open' })
+    .from('projects')
+    .where('project_id', projectId)
+    .returning('*')
+}
+
 // DELETE
 const softDeleteProject = (projectId) => {
   return knex
@@ -55,5 +63,6 @@ module.exports = {
   getOneProject,
   updateProject,
   softDeleteProject,
-  deleteProject
+  deleteProject,
+  restoreProject
 }

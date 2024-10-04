@@ -35,6 +35,16 @@ const updateOneUser = (req, res) => {
   })
 }
 
+const restoreUser = (req, res) => {
+  modelUsers.restoreUser(req.params.userId)
+    .then(() => {
+      res.status(200).json({ message: 'User successfully restored' })
+    })
+    .catch((err) => {
+      res.status(400).json({ error: err.message })
+    })
+}
+
 // DELETE
 const hideOneUser = (req, res) => {
   modelUsers.softDeleteUser(req.params.userId).then(() => {
@@ -58,5 +68,6 @@ module.exports = {
   getOneUser,
   updateOneUser,
   hideOneUser,
-  deleteOneUser
+  deleteOneUser,
+  restoreUser
 }

@@ -1,18 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Documentacion de la API</title>
 </head>
+
 <body>
     <header>
         <h1 class="title">Tinder para habilidades sociales API</h1>
     </header>
 
-    <main> 
-        <h2 class="title">Documentacion</h2>       
+    <main>
+        <h2 class="title">Documentacion</h2>
+        <h3 class="title">Para todos los metodos hay que utilizar /api/v1/ antes de la ruta especifica con la
+            informacion a obtener.
+            A esepcion del metodo delete el cual despues de la tabla especificada hay que colocar un /delete para que
+            funcione la petiicon</h3>
+        <h4 class="title">hay 7 tablas de datos a las cuales puedes acceder las cuales son: users, skills,
+            person_skills,
+            companies, projects, contracts, rating</h4>
+
+        <div class="url">
+            <p><strong>LA URL PRINCIPAL ES: </strong>    http://localhost:3000 </p>
+        </div>
+
+        <div class="title">
+            <p>USERS, COMPANIES y PROJECTS tienen un segundo delete el cual solo oculta el dato de la peticion mas no lo borra por completo de la 
+                DB<br> Para ocultar algun id de estas tablas se utiliza: <strong>/api/v1/nombre de la tabla/id</strong><br>
+                Y para restaurarlo se utiliza: <strong>/api/v1/nombre de la tabla/restore/id</strong>
+            </p>
+        </div>
+
+        <div class="method_cards">
+
+            <div class="border">
+                <h3>Metodo GET</h3>
+                <ul>
+                    <li>
+                        /api/v1/users
+                    </li>
+                    <li>
+                        /api/v1/skills
+                    </li>
+                    <li>
+                        /api/v1/person_skills
+                    </li>
+                    <li>
+                        /api/v1/companies
+                    </li>
+                    <li>
+                        /api/v1/projects
+                    </li>
+                    <li>
+                        /api/v1/contracts
+                    </li>
+                    <li>
+                        /api/v1/rating
+                    </li>
+                </ul>
+            </div>
+
+            <div class="border">
+                <h3>Metodo POST</h3>
+                <ul>
+                    <li>
+                        /api/v1/users
+                    </li>
+                    <li>
+                        /api/v1/skills
+                    </li>
+                    <li>
+                        /api/v1/person_skills
+                    </li>
+                    <li>
+                        /api/v1/companies
+                    </li>
+                    <li>
+                        /api/v1/projects
+                    </li>
+                    <li>
+                        /api/v1/contracts
+                    </li>
+                    <li>
+                        /api/v1/rating
+                    </li>
+                </ul>
+            </div>
+
+            <div class="border">
+                <h3>Metodo PATCH</h3>
+                <ul>
+                    <li>
+                        /api/v1/users/id
+                    </li>
+                    <li>
+                        /api/v1/skills/id
+                    </li>
+                    <li>
+                        /api/v1/person_skills/id
+                    </li>
+                    <li>
+                        /api/v1/companies/id
+                    </li>
+                    <li>
+                        /api/v1/projects/id
+                    </li>
+                    <li>
+                        /api/v1/contracts/id
+                    </li>
+                    <li>
+                        /api/v1/rating/id
+                </ul>
+            </div>
+
+            <div class="border">
+                <h3>Metodo DELETE</h3>
+                <ul>
+                    <li>
+                        /api/v1/users/delete/id
+                    </li>
+                    <li>
+                        /api/v1/skills/delete/id
+                    </li>
+                    <li>
+                        /api/v1/person_skills/delete/id
+                    </li>
+                    <li>
+                        /api/v1/companies/delete/id
+                    </li>
+                    <li>
+                        /api/v1/projects/delete/id
+                    </li>
+                    <li>
+                        /api/v1/contracts/delete/id
+                    </li>
+                    <li>
+                        /api/v1/rating/delete/id
+                    </li>
+                </ul>
+            </div>
+
     </main>
 </body>
+
 </html>

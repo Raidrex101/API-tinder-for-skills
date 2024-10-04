@@ -39,6 +39,16 @@ const updateOneProject = (req, res) => {
     })
 }
 
+const restoreProject = (req, res) => {
+  modelOptions.restoreProject(req.params.projectId)
+    .then(() => {
+      res.status(200).json({ message: 'Project successfully restored' })
+    })
+    .catch((err) => {
+      res.status(400).json({ error: err.message })
+    })
+}
+
 // DELETE
 const hideOneProject = (req, res) => {
   modelOptions.softDeleteProject(req.params.projectId)
@@ -64,5 +74,6 @@ module.exports = {
   getOneProject,
   updateOneProject,
   hideOneProject,
-  deleteOneProject
+  deleteOneProject,
+  restoreProject
 }

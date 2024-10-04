@@ -7,6 +7,6 @@ router.post('/skills', skillsController.createSkill)
 router.get('/skills', skillsController.getAllSkills)
 router.get('/skills/:skillId', skillsController.getOneSkill)
 router.patch('/skills/:skillId', skillsController.updateOneSkill)
-router.delete('/skills/:skillId', skillsController.deleteOneSkill)
+router.delete('/skills/delete/:skillId', skillsController.deleteOneSkill)
 
 module.exports = router

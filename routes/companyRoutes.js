@@ -7,6 +7,7 @@ router.post('/companies', companyController.createCompany)
 router.get('/companies', companyController.getAllCompanies)
 router.get('/companies/:companyId', companyController.getOneCompany)
 router.patch('/companies/:companyId', companyController.updateOneCompany)
+router.patch('/companies/restore/:companyId', companyController.restoreCompany)
 router.delete('/companies/:companyId', companyController.hideACompany)
 router.delete('/companies/delete/:companyId', companyController.deleteOneCompany)
 

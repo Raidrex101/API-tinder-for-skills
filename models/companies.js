@@ -32,6 +32,13 @@ const updateCompany = (companyId, bodyCompany) => {
     .returning('*')
 }
 
+const restoreCompany = (companyId) => {
+  return knex
+    .update({ is_active: true })
+    .from('companies')
+    .where('company_id', companyId)
+}
+
 // DELETE
 const softDeleteCompany = (companyId) => {
   return knex
@@ -53,5 +60,6 @@ module.exports = {
   getOneCompany,
   updateCompany,
   softDeleteCompany,
-  deleteCompany
+  deleteCompany,
+  restoreCompany
 }
